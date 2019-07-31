@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 UserInterface", "01 UserInterface", "{2C6EBEC4-7297-4CE6-AB5F-286C0C4D788E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 BuisnessLogicLayer", "02 BuisnessLogicLayer", "{A13A64E9-BD86-46C1-AF9C-9FC774B4A86B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 DataAccessLayer", "03 DataAccessLayer", "{255AFB1A-E65C-4A69-B424-0D73F3119A0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 Core", "04 Core", "{FE13FC5C-1129-4BDF-AF87-703BBFEE31ED}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48194E72-FA85-4BAF-A91E-8FFE4F71E881}
+	EndGlobalSection
+EndGlobal
