@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Category\Setup.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -160,6 +161,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Category\Setup.aspx.cs">
+      <DependentUpon>Setup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Category\Setup.aspx.designer.cs">
+      <DependentUpon>Setup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -206,6 +214,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Stock.Core\Stock.Core.csproj">
+      <Project>{33a28fa5-3aae-42e5-bdc1-9c6013923254}</Project>
+      <Name>Stock.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Stock.Managers\Stock.Managers.csproj">
+      <Project>{fef6410b-09f7-48e8-9694-33ef1c084d5f}</Project>
+      <Name>Stock.Managers</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

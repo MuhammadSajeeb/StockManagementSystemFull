@@ -41,12 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionRepositories\CategorySetupRepository.cs" />
+    <Compile Include="DatabaseConnection\MainRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ActionRepositories\" />
-    <Folder Include="DatabaseConnection\" />
     <Folder Include="ViewRepositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Stock.Core\Stock.Core.csproj">
+      <Project>{33a28fa5-3aae-42e5-bdc1-9c6013923254}</Project>
+      <Name>Stock.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

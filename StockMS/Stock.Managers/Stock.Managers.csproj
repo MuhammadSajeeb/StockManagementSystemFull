@@ -41,11 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionManagers\CategorySetupManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ActionManagers\" />
     <Folder Include="ViewManagers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Stock.Core\Stock.Core.csproj">
+      <Project>{33a28fa5-3aae-42e5-bdc1-9c6013923254}</Project>
+      <Name>Stock.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Stock.Persistancis\Stock.Persistancis.csproj">
+      <Project>{4688307b-b6af-4a7f-93f3-eb6911d36b6b}</Project>
+      <Name>Stock.Persistancis</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
