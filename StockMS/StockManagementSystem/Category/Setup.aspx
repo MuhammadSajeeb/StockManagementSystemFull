@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Setup.aspx.cs" Inherits="StockManagementSystem.Category.Setup" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <br />
@@ -11,6 +12,7 @@
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">
+            <asp:Label runat="server" ID="lblMessage" CssClass="col-md-2 control-label" Font-Bold="true" Font-Size="Medium" Text=""></asp:Label>
             <div class="col-md-10">
                 <div class="messagealert" id="alert_container">
                 </div>
@@ -35,15 +37,34 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" ID="CategorySaveButton" Text="Save" CssClass="btn btn-info" />
-                <asp:Button runat="server" ID="ClearButton" Text="Clear" CssClass="btn btn-info"/>
+                <asp:Button runat="server" ID="CategorySaveButton" Text="Save" CssClass="btn btn-info" OnClick="CategorySaveButton_Click" />
+                <asp:Button runat="server" ID="ClearButton" Text="Clear" CssClass="btn btn-info" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <asp:GridView ID="CategoriesGridView" runat="server" Width="100%" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="10" ForeColor="Black" GridLines="Horizontal" AllowPaging="True" PageSize="6" CellSpacing="10" OnPageIndexChanging="CategoriesGridView_PageIndexChanging" OnSelectedIndexChanged="CategoriesGridView_SelectedIndexChanged">
+                    <Columns>
+                        <asp:TemplateField HeaderText="Serial No" ItemStyle-Width="130">
+                            <ItemTemplate>
+                                <asp:Label ID="lblSerialNo" Text='<%# Container.DataItemIndex + 1 %>' runat="server" />
+                            </ItemTemplate>
+                            <ItemStyle Width="130px"></ItemStyle>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="Code" HeaderText="Category Code" />
+                        <asp:BoundField DataField="Name" HeaderText="Category Name" />
+                        <asp:CommandField HeaderText="Action" SelectText="Edit" ShowSelectButton="True">
+                            <ItemStyle ForeColor="#CC0000" />
+                        </asp:CommandField>
+                    </Columns>
+                    <PagerStyle Font-Bold="true" Font-Size="Small" ForeColor="#3399FF" />
+                </asp:GridView>
             </div>
         </div>
     </div>
     <style type="text/css">
         .messagealert {
-            width: 358px;
-            margin-left: 120px;
+            width: 280px;
         }
     </style>
     <script type="text/javascript">
@@ -65,4 +86,5 @@
             $('#alert_container').append('<div id="alert_div" style="margin: 0 0.5%; -webkit-box-shadow: 3px 4px 6px #999;" class="alert fade in ' + cssclass + '"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>' + messagetype + '!</strong> <span>' + message + '</span></div>');
         }
     </script>
+    <link href="../Content/Gridviewstylesheet.css" rel="stylesheet" />
 </asp:Content>
