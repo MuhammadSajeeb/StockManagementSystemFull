@@ -126,6 +126,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Party\Customer.aspx" />
+    <Content Include="Party\Suplier.aspx" />
     <Content Include="Product\Setup.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -188,6 +189,13 @@
     <Compile Include="Party\Customer.aspx.designer.cs">
       <DependentUpon>Customer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Party\Suplier.aspx.cs">
+      <DependentUpon>Suplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Party\Suplier.aspx.designer.cs">
+      <DependentUpon>Suplier.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Product\Setup.aspx.cs">
       <DependentUpon>Setup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,7 +228,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Party\CustomerImages\" />
+    <Folder Include="Party\Images\" />
     <Folder Include="Product\Images\" />
   </ItemGroup>
   <ItemGroup>

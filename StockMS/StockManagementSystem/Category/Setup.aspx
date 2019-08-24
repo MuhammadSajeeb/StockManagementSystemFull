@@ -23,7 +23,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="txtCode" CssClass="form-control" Font-Bold="true" Font-Size="Medium" Style="text-align: center" ReadOnly="true" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCode"
-                    CssClass="text-danger" ErrorMessage="The Name field is required." />
+                    CssClass="text-danger" ErrorMessage="This field is required." />
                 <asp:HiddenField ID="IdHiddenField" runat="server" />
             </div>
         </div>
@@ -32,7 +32,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="txtName" CssClass="form-control" Font-Bold="true" Font-Size="Medium" Style="text-align: center" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtName"
-                    CssClass="text-danger" ErrorMessage="The Roll field is required." />
+                    CssClass="text-danger" ErrorMessage="This field is required." />
             </div>
         </div>
         <div class="form-group">

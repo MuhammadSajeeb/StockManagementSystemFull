@@ -10,16 +10,17 @@ using System.Web.UI.WebControls;
 
 namespace StockManagementSystem.Party
 {
-    public partial class Customer : System.Web.UI.Page
+    public partial class Suplier : System.Web.UI.Page
     {
-        CustomerRepository _CustomerRepository = new CustomerRepository();
+        SuplierRepository _SuplierRepository = new SuplierRepository();
         public enum MessageType { Success, Failed, Error, Info, Warning };
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                ShowMessage("Failed Suplier Saved!!...Try Again", MessageType.Failed);
                 AutoCodeGenerate();
-                LoadCustomers();
+                LoadSuplier();
             }
         }
         protected void ShowMessage(string Message, MessageType type)
@@ -28,11 +29,11 @@ namespace StockManagementSystem.Party
         }
         public void AutoCodeGenerate()
         {
-            decimal AlreadyExistData = _CustomerRepository.AlreadyExistCode();
+            decimal AlreadyExistData = _SuplierRepository.AlreadyExistCode();
             int code = 1;
             if (AlreadyExistData >= 1)
             {
-                var GetLastCode = _CustomerRepository.LastExistCode();
+                var GetLastCode = _SuplierRepository.LastExistCode();
                 if (GetLastCode != null)
                 {
                     code = Convert.ToInt32(GetLastCode.Code);
@@ -45,10 +46,10 @@ namespace StockManagementSystem.Party
                 txtCode.Text = "001";
             }
         }
-        public void LoadCustomers()
+        public void LoadSuplier()
         {
-            CustomerGridView.DataSource = _CustomerRepository.GetAllCustomers();
-            CustomerGridView.DataBind();
+            SuplierGridView.DataSource = _SuplierRepository.GetAllCustomers();
+            SuplierGridView.DataBind();
         }
         public void Refresh()
         {
@@ -56,45 +57,46 @@ namespace StockManagementSystem.Party
             txtEmail.Text = "";
             txtAddress.Text = "";
             txtContact.Text = "";
-            txtLoyaltyPoint.Text = "";
+            txtContactPerson.Text = "";
         }
+
         protected void SaveButton_Click(object sender, EventArgs e)
         {
             try
             {
-                ImageFileUpload.SaveAs(Server.MapPath("~/Party/Images/") + Path.GetFileName(ImageFileUpload.FileName));
-                String GetImagePath = "~/Party/Images/" + Path.GetFileName(ImageFileUpload.FileName);
+                SuplierImageFileUpload.SaveAs(Server.MapPath("~/Party/Images/") + Path.GetFileName(SuplierImageFileUpload.FileName));
+                String GetImagePaths = "~/Party/Images/" + Path.GetFileName(SuplierImageFileUpload.FileName);
 
-                Customers _Customers = new Customers();
-                _Customers.Code = txtCode.Text;
-                _Customers.Name = txtName.Text;
-                _Customers.Email = txtEmail.Text;
-                _Customers.Address = txtAddress.Text;
-                _Customers.Contact = txtContact.Text;
-                _Customers.LoyaltyPoint = Convert.ToDecimal(txtLoyaltyPoint.Text);
-                _Customers.Images = GetImagePath;
+                Supliers _Supliers = new Supliers();
+                _Supliers.Code = txtCode.Text;
+                _Supliers.Name = txtName.Text;
+                _Supliers.Email = txtEmail.Text;
+                _Supliers.Address = txtAddress.Text;
+                _Supliers.Contact = txtContact.Text;
+                _Supliers.ContactPerson = (txtContactPerson.Text);
+                _Supliers.Images = GetImagePaths;
 
                 if (IdHiddenField.Value == "")
                 {
-                    decimal AlreadyExistCustomer = _CustomerRepository.AlreadyExistCustomer(_Customers);
+                    decimal AlreadyExistCustomer = _SuplierRepository.AlreadyExistSuplier(_Supliers);
                     if (AlreadyExistCustomer >= 1)
                     {
-                        ShowMessage("This Customer Already Here!!...Enter Another Name", MessageType.Warning);
+                        ShowMessage("This Suplier Already Here!!...Enter Another Name", MessageType.Warning);
                     }
                     else
                     {
-                        int Savesuccess = _CustomerRepository.Add(_Customers);
+                        int Savesuccess = _SuplierRepository.Add(_Supliers);
                         if (Savesuccess > 0)
                         {
-                            ShowMessage("Successfully Save Customer!!...Continue Working", MessageType.Success);
+                            ShowMessage("Successfully Save Suplier!!...Continue Working", MessageType.Success);
                             IdHiddenField.Value = "";
                             Refresh();
                             AutoCodeGenerate();
-                            LoadCustomers();
+                            LoadSuplier();
                         }
                         else
                         {
-                            ShowMessage("Failed Customer Saved!!...Try Again", MessageType.Failed);
+                            ShowMessage("Failed Suplier Saved!!...Try Again", MessageType.Failed);
                         }
                     }
                 }

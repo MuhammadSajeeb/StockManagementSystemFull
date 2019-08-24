@@ -35,7 +35,7 @@ namespace Stock.Persistancis.ActionRepositories
         }
         public decimal AlreadyExistCustomer(Customers _Customers)
         {
-            string query = "Select Count(*)from Customers Where Name='" + _Customers.Name + "'";
+            string query = "Select Count(*)from Customers Where Name='" + _Customers.Name + "' And Contact='"+_Customers.Contact+"'";
             return _MainRepository.ExecuteScalar(query, _MainRepository.ConnectionString());
         }
         public int Add(Customers _Customers)
@@ -80,8 +80,5 @@ namespace Stock.Persistancis.ActionRepositories
 
             return _CustomersList;
         }
-
-
-
     }
 }
