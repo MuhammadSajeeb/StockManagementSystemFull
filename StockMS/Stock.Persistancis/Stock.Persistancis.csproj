@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionRepositories\CategorySetupRepository.cs" />
+    <Compile Include="ActionRepositories\CustomerRepository.cs" />
     <Compile Include="ActionRepositories\ProductSetupRepository.cs" />
     <Compile Include="DatabaseConnection\MainRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

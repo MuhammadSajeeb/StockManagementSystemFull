@@ -43,11 +43,6 @@ namespace Stock.Persistancis.ActionRepositories
             string query = "Insert Into Categories(Code,Name) Values ('" + _Categories.Code + "','" + _Categories.Name + "')";
             return _MainRepository.ExecuteNonQuery(query, _MainRepository.ConnectionString());
         }
-        public int AddIamges(Images _Images)
-        {
-            string query = "Insert Into tbl_Images(Name,Size,ImageData) Values ('" + _Images.Name + "','" + _Images.Size + "','"+_Images.ImageData+"')";
-            return _MainRepository.ExecuteNonQuery(query, _MainRepository.ConnectionString());
-        }
         public int Update(Categories _Categories)
         {
             string query = "Update Categories SET  Name='" + _Categories.Name + "' WHERE Code='" + _Categories.Code + "' ";

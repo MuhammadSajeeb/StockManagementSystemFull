@@ -67,8 +67,8 @@ namespace StockManagementSystem.Product
         {
             try
             {
-                ImageFileUpload.SaveAs(Server.MapPath("~/Product/Images") + Path.GetFileName(ImageFileUpload.FileName));
-                String GetImagePath = "~/Product/Images" + Path.GetFileName(ImageFileUpload.FileName);
+                ImageFileUpload.SaveAs(Server.MapPath("~/Product/Images/") + Path.GetFileName(ImageFileUpload.FileName));
+                String GetImagePath = "~/Product/Images/" + Path.GetFileName(ImageFileUpload.FileName);
 
                 Products _Products = new Products();
                 _Products.Code = txtCode.Text;
