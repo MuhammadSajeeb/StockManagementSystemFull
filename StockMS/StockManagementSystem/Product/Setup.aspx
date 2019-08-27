@@ -13,15 +13,6 @@
             </div>
         </div>
         <div class="form-group">
-            <asp:Label runat="server" ID="lblCategories" AssociatedControlID="CategoriesDropDownList" CssClass="col-md-2 control-label">Categories</asp:Label>
-            <div class="col-md-3">
-                <asp:DropDownList ID="CategoriesDropDownList" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="CategoriesDropDownList_SelectedIndexChanged"></asp:DropDownList>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="CategoriesDropDownList"
-                    CssClass="text-danger" ErrorMessage="This field is required." />
-                <input type="button" id="btnShowLogin" class="btn btn-primary" value="Add" />
-            </div>
-        </div>
-        <div class="form-group">
             <asp:Label runat="server" ID="lblCode" CssClass="col-md-2 control-label" Font-Bold="true" Text="Code" Font-Size="Medium"></asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="txtCode" CssClass="form-control" Font-Bold="true" Font-Size="Medium" Style="text-align: center" ReadOnly="true" />
@@ -36,6 +27,15 @@
                 <asp:TextBox runat="server" ID="txtName" CssClass="form-control" Font-Bold="true" Font-Size="Medium" Style="text-align: center" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtName"
                     CssClass="text-danger" ErrorMessage="The Roll field is required." />
+            </div>
+        </div>
+        <div class="form-group">
+            <asp:Label runat="server" ID="lblCategories" AssociatedControlID="CategoriesDropDownList" CssClass="col-md-2 control-label">Categories</asp:Label>
+            <div class="col-md-3">
+                <asp:DropDownList ID="CategoriesDropDownList" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="CategoriesDropDownList_SelectedIndexChanged"></asp:DropDownList>
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="CategoriesDropDownList"
+                    CssClass="text-danger" ErrorMessage="This field is required." />
+                <input type="button" id="btnShowLogin" class="btn btn-primary" value="Add" />
             </div>
         </div>
         <div class="form-group">

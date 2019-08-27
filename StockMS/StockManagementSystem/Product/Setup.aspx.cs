@@ -18,6 +18,7 @@ namespace StockManagementSystem.Product
         {
             if(!IsPostBack)
             {
+                AutoCodeGenerate();
                 GetAllCategories();
             }
         }
@@ -27,14 +28,12 @@ namespace StockManagementSystem.Product
         }
         public void AutoCodeGenerate()
         {
-            Products _Products = new Products();
-            _Products.CategoriesId = Convert.ToInt32(CategoriesDropDownList.SelectedValue);
 
-            decimal AlreadyExistData = _ProductSetupRepository.AlreadyExistCode(_Products.CategoriesId);
+            decimal AlreadyExistData = _ProductSetupRepository.AlreadyExistCode();
             int code = 1;
             if (AlreadyExistData >= 1)
             {
-                var GetLastCode = _ProductSetupRepository.LastExistCode(_Products.CategoriesId);
+                var GetLastCode = _ProductSetupRepository.LastExistCode();
                 if (GetLastCode != null)
                 {
                     code = Convert.ToInt32(GetLastCode.Code);

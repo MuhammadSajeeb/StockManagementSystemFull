@@ -12,16 +12,16 @@ namespace Stock.Persistancis.ActionRepositories
     {
         private MainRepository _MainRepository = new MainRepository();
 
-        public decimal AlreadyExistCode(int id)
+        public decimal AlreadyExistCode()
         {
-            string query = "Select Count(*)from Products Where CategoriesId='"+id+"'";
+            string query = "Select Count(*)from Products";
             return _MainRepository.ExecuteScalar(query, _MainRepository.ConnectionString());
         }
-        public Products LastExistCode(int id)
+        public Products LastExistCode()
         {
             Products _Products = null;
 
-            string query = "select top 1 Code from Products Where CategoriesId='"+id+"' order by Code desc";
+            string query = "select top 1 Code from Products order by Code desc";
             var reader = _MainRepository.Reader(query, _MainRepository.ConnectionString());
             if (reader.HasRows)
             {

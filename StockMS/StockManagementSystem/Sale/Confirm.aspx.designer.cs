@@ -139,6 +139,24 @@ namespace StockManagementSystem.Sale {
         protected global::System.Web.UI.WebControls.TextBox txtQty;
         
         /// <summary>
+        /// lblTotalMrp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalMrp;
+        
+        /// <summary>
+        /// txtTotalMrp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTotalMrp;
+        
+        /// <summary>
         /// AddButton control.
         /// </summary>
         /// <remarks>
@@ -191,6 +209,24 @@ namespace StockManagementSystem.Sale {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDiscount;
+        
+        /// <summary>
+        /// lblPayableAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPayableAmount;
+        
+        /// <summary>
+        /// txtPayableAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPayableAmount;
         
         /// <summary>
         /// lblPaidAmount control.

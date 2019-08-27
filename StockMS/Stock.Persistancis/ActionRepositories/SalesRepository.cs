@@ -106,5 +106,58 @@ namespace Stock.Persistancis.ActionRepositories
 
             return _PurchaseDetails;
         }
+        public decimal QtyOfPurchase(string code)
+        {
+            string query = "select SUM(Qty) from PurchaseDetails Where ProductCode='"+code+"' ";
+            return _MainRepository.ExecuteScalar(query, _MainRepository.ConnectionString());
+        }
+        public decimal QtyOfSales(string Product)
+        {
+            string query = "select SUM(Qty) from SaleDetails Where Product='" + Product + "' ";
+            return _MainRepository.ExecuteScalar(query, _MainRepository.ConnectionString());
+        }
+        public int Add(SaleDetails _SaleDetails)
+        {
+            string query = "Insert Into SaleDetails(Product,Qty,Mrp,TotalMrp,Invoice,Date) Values ('" + _SaleDetails.Product + "','" + _SaleDetails.Qty + "','" + _SaleDetails.Mrp + "','" + _SaleDetails.TotalMrp + "','" + _SaleDetails.Invoice + "','" + DateTime.Now.ToShortDateString() + "')";
+            return _MainRepository.ExecuteNonQuery(query, _MainRepository.ConnectionString());
+        }
+        public int Delete(int id)
+        {
+            string query = ("Delete From SaleDetails Where Id='" + id + "' ");
+            return _MainRepository.ExecuteNonQuery(query, _MainRepository.ConnectionString());
+        }
+        public int UpdateLoyaltyPoint(Customers _Customers)
+        {
+            string query = "Update Customers SET loyaltyPoint='" + _Customers.LoyaltyPoint + "' where Id='" + _Customers.Id + "' ";
+            return _MainRepository.ExecuteNonQuery(query, _MainRepository.ConnectionString());
+        }
+        public List<SaleDetails> GetAllSalesDetails(string Invoice)
+        {
+            var _SaleDetailslsList = new List<SaleDetails>();
+            string query = ("Select *from SaleDetails where Invoice='" + Invoice + "' ");
+            var reader = _MainRepository.Reader(query, _MainRepository.ConnectionString());
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    var _SaleDetails = new SaleDetails();
+                    _SaleDetails.Id = Convert.ToInt32(reader["Id"].ToString());
+                    _SaleDetails.Product = reader["Product"].ToString();
+                    _SaleDetails.Qty = Convert.ToDecimal(reader["Qty"].ToString());
+                    _SaleDetails.Mrp = Convert.ToDecimal(reader["Mrp"].ToString());
+                    _SaleDetails.TotalMrp = Convert.ToDecimal(reader["TotalMrp"].ToString());
+
+                    _SaleDetailslsList.Add(_SaleDetails);
+                }
+            }
+            reader.Close();
+
+            return _SaleDetailslsList;
+        }
+        public decimal GrandTotal(string invoice)
+        {
+            string query = "select SUM(TotalMrp) from SaleDetails Where Invoice='" + invoice + "' ";
+            return _MainRepository.ExecuteScalar(query, _MainRepository.ConnectionString());
+        }
     }
 }

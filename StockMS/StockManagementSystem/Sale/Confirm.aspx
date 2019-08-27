@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <asp:Label runat="server" ID="lblMrp" AssociatedControlID="txtMrp" CssClass="col-md-2 control-label">MRP</asp:Label>
+                                    <asp:Label runat="server" ID="lblMrp" AssociatedControlID="txtMrp" CssClass="col-md-2 control-label">MRP(Tk)</asp:Label>
                                     <div class="col-md-10">
                                         <asp:TextBox runat="server" ID="txtMrp" CssClass="form-control" Font-Bold="true" Font-Size="Medium" Style="text-align: center" ReadOnly="true" />
                                     </div>
@@ -61,12 +61,18 @@
                                 <div class="form-group">
                                     <asp:Label runat="server" ID="lblQty" AssociatedControlID="txtQty" CssClass="col-md-2 control-label">Quantity</asp:Label>
                                     <div class="col-md-10">
-                                        <asp:TextBox runat="server" ID="txtQty" CssClass="form-control" Font-Bold="true" Font-Size="Medium" Style="text-align: center" ReadOnly="false" />
+                                        <asp:TextBox runat="server" ID="txtQty" CssClass="form-control" Font-Bold="true" Font-Size="Medium" Style="text-align: center" ReadOnly="false" AutoPostBack="true" OnTextChanged="txtQty_TextChanged" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <asp:Label runat="server" ID="lblTotalMrp" AssociatedControlID="txtTotalMrp" CssClass="col-md-2 control-label">Total Mrp(Tk)</asp:Label>
+                                    <div class="col-md-10">
+                                        <asp:TextBox runat="server" ID="txtTotalMrp" CssClass="form-control" Font-Bold="true" Font-Size="Medium" Style="text-align: center" ReadOnly="false" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-offset-7 col-md-12">
-                                        <asp:Button ID="AddButton" runat="server" Text="Add" CssClass="btn btn-info" Width="85px" />
+                                        <asp:Button ID="AddButton" runat="server" Text="Add" CssClass="btn btn-info" Width="85px" OnClick="AddButton_Click" />
                                     </div>
                                 </div>
                             </div>
@@ -81,14 +87,14 @@
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <div class="col-md-5">
-                                <asp:GridView ID="SalesGridView" runat="server" EmptyDataText="No Purchase Order" Width="100%" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="10" ForeColor="Black" GridLines="Horizontal" AllowPaging="False" CellSpacing="10">
+                            <div class="col-md-12">
+                                <asp:GridView ID="SalesGridView" runat="server" EmptyDataText="No Purchase Order" Width="100%" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="10" ForeColor="Black" GridLines="Horizontal" AllowPaging="False" CellSpacing="10" OnRowCommand="SalesGridView_RowCommand">
                                     <Columns>
                                         <asp:BoundField DataField="Id" HeaderText="Id" Visible="false" />
-                                        <asp:BoundField DataField="Name" HeaderText="Product" />
+                                        <asp:BoundField DataField="Product" HeaderText="Product" />
                                         <asp:BoundField DataField="Qty" HeaderText="Qty" />
                                         <asp:BoundField DataField="Mrp" HeaderText="Mrp" />
-                                        <asp:BoundField DataField="TotalMrp" HeaderText="TotalMrp" />
+                                        <asp:BoundField DataField="TotalMrp" HeaderText="Total" />
                                         <asp:TemplateField HeaderText="Action">
                                             <ItemTemplate>
                                                 <asp:LinkButton ID="lnDelete" CommandArgument='<%# Eval("Id") %>' CommandName="DeleteRow" ForeColor="#8C4510" runat="server" CausesValidation="false">Delete</asp:LinkButton>
@@ -109,6 +115,12 @@
                             <asp:Label runat="server" ID="lblDiscount" AssociatedControlID="txtMrp" CssClass="col-md-2 control-label">Discount</asp:Label>
                             <div class="col-md-10">
                                 <asp:TextBox runat="server" ID="txtDiscount" CssClass="form-control" Font-Bold="true" Font-Size="Medium" Style="text-align: center" ReadOnly="true" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label runat="server" ID="lblPayableAmount" AssociatedControlID="txtPayableAmount" CssClass="col-md-2 control-label">Payable Amount</asp:Label>
+                            <div class="col-md-10">
+                                <asp:TextBox runat="server" ID="txtPayableAmount" CssClass="form-control" Font-Bold="true" Font-Size="Medium" Style="text-align: center" ReadOnly="true" />
                             </div>
                         </div>
                         <div class="form-group">
