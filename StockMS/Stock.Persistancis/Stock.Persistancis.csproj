@@ -45,6 +45,7 @@
     <Compile Include="ActionRepositories\CustomerRepository.cs" />
     <Compile Include="ActionRepositories\ProductSetupRepository.cs" />
     <Compile Include="ActionRepositories\PurchaseRepository.cs" />
+    <Compile Include="ActionRepositories\SalesRepository.cs" />
     <Compile Include="ActionRepositories\SuplierRepository.cs" />
     <Compile Include="DatabaseConnection\MainRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

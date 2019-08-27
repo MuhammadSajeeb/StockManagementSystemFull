@@ -7,37 +7,46 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace StockManagementSystem.Purchase {
+namespace StockManagementSystem.Sale {
     
     
     public partial class Confirm {
         
         /// <summary>
-        /// lblMessage control.
+        /// lblCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.Label lblCustomer;
         
         /// <summary>
-        /// lblDate control.
+        /// CustomerDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDate;
+        protected global::System.Web.UI.WebControls.DropDownList CustomerDropDownList;
         
         /// <summary>
-        /// txtDate control.
+        /// lblLoyaltyPoint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDate;
+        protected global::System.Web.UI.WebControls.Label lblLoyaltyPoint;
+        
+        /// <summary>
+        /// txtLoyaltyPoint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLoyaltyPoint;
         
         /// <summary>
         /// lblInvoice control.
@@ -58,24 +67,6 @@ namespace StockManagementSystem.Purchase {
         protected global::System.Web.UI.WebControls.TextBox txtInvoice;
         
         /// <summary>
-        /// lblSuplier control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSuplier;
-        
-        /// <summary>
-        /// SuplierDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SuplierDropDownList;
-        
-        /// <summary>
         /// lblProduct control.
         /// </summary>
         /// <remarks>
@@ -94,112 +85,22 @@ namespace StockManagementSystem.Purchase {
         protected global::System.Web.UI.WebControls.DropDownList ProductDropDownList;
         
         /// <summary>
-        /// lblCode control.
+        /// lblAvailableQty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCode;
+        protected global::System.Web.UI.WebControls.Label lblAvailableQty;
         
         /// <summary>
-        /// txtCode control.
+        /// txtAvailableQty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCode;
-        
-        /// <summary>
-        /// lblManufacturedDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblManufacturedDate;
-        
-        /// <summary>
-        /// txtManufacturedDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtManufacturedDate;
-        
-        /// <summary>
-        /// lblExpireDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblExpireDate;
-        
-        /// <summary>
-        /// txtExpireDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtExpireDate;
-        
-        /// <summary>
-        /// lblQty control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQty;
-        
-        /// <summary>
-        /// txtQty control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQty;
-        
-        /// <summary>
-        /// lblUnitPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUnitPrice;
-        
-        /// <summary>
-        /// txtUnitPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnitPrice;
-        
-        /// <summary>
-        /// lblTotalPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalPrice;
-        
-        /// <summary>
-        /// txtTotalPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTotalPrice;
+        protected global::System.Web.UI.WebControls.TextBox txtAvailableQty;
         
         /// <summary>
         /// lblMrp control.
@@ -220,6 +121,24 @@ namespace StockManagementSystem.Purchase {
         protected global::System.Web.UI.WebControls.TextBox txtMrp;
         
         /// <summary>
+        /// lblQty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQty;
+        
+        /// <summary>
+        /// txtQty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtQty;
+        
+        /// <summary>
         /// AddButton control.
         /// </summary>
         /// <remarks>
@@ -229,13 +148,85 @@ namespace StockManagementSystem.Purchase {
         protected global::System.Web.UI.WebControls.Button AddButton;
         
         /// <summary>
-        /// PurchaseGridView control.
+        /// SalesGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView PurchaseGridView;
+        protected global::System.Web.UI.WebControls.GridView SalesGridView;
+        
+        /// <summary>
+        /// lblGrandTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGrandTotal;
+        
+        /// <summary>
+        /// txtGrandTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtGrandTotal;
+        
+        /// <summary>
+        /// lblDiscount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDiscount;
+        
+        /// <summary>
+        /// txtDiscount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDiscount;
+        
+        /// <summary>
+        /// lblPaidAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPaidAmount;
+        
+        /// <summary>
+        /// txtPaidAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPaidAmount;
+        
+        /// <summary>
+        /// lblChanges control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblChanges;
+        
+        /// <summary>
+        /// txtChanges control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtChanges;
         
         /// <summary>
         /// SubmitButton control.
@@ -245,5 +236,14 @@ namespace StockManagementSystem.Purchase {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SubmitButton;
+        
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

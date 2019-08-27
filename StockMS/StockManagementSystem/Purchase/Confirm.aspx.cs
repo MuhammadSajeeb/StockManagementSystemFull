@@ -160,5 +160,31 @@ namespace StockManagementSystem.Purchase
             catch
             { }
         }
+
+        protected void SubmitButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Purchases _Purchases = new Purchases();
+                _Purchases.SuplierId = Convert.ToInt32(SuplierDropDownList.SelectedValue);
+                _Purchases.Invoice = txtInvoice.Text;
+
+                int submitSuccess = _PurchaseRepository.Submit(_Purchases);
+                if(submitSuccess>0)
+                {
+                    lblMessage.Text = "ok";
+                }
+                else
+                {
+                    lblMessage.Text = "no";
+                }
+                     
+            }
+            catch(Exception ex)
+            {
+                lblMessage.Text = ex.Message;
+            }
+
+        }
     }
 }

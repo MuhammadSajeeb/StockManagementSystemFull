@@ -78,33 +78,34 @@
 
         <div class="form-group">
             <div class="col-md-offset-1 col-md-10">
-                <asp:UpdatePanel ID="up" runat="server">
-                    <ContentTemplate>
-                        <asp:GridView ID="PurchaseGridView" runat="server" EmptyDataText="No Purchase Order" Width="100%" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="10" ForeColor="Black" GridLines="Horizontal" AllowPaging="False" CellSpacing="10" OnRowCommand="PurchaseGridView_RowCommand">
-                            <Columns>
-                                <asp:TemplateField>
-                                    <ItemTemplate>
-                                        <asp:LinkButton ID="lnDelete" CommandArgument='<%# Eval("Id") %>' CommandName="DeleteRow" ForeColor="#8C4510" runat="server" CausesValidation="false">Delete</asp:LinkButton>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:BoundField DataField="Id" HeaderText="Id" Visible="false" />
-                                <asp:BoundField DataField="ProductCode" HeaderText="Product(Code)" />
-                                <asp:BoundField DataField="ManufacturedDate" HeaderText="Manufactured Date" HtmlEncode="false" DataFormatString="{0:MM/dd/yyyy}" />
-                                <asp:BoundField DataField="ExpireDate" HeaderText="Expire Date" />
-                                <asp:BoundField DataField="Qty" HeaderText="Qty" />
-                                <asp:BoundField DataField="UnitPrice" HeaderText="Unit Price" />
-                                <asp:BoundField DataField="TotalPrice" HeaderText="Total Price" />
-                                <asp:BoundField DataField="NewMrp" HeaderText="New Mrp" />
-                                <asp:CommandField HeaderText="Action" SelectText="Edit" ShowSelectButton="True">
-                                    <ItemStyle ForeColor="#CC0000" />
-                                </asp:CommandField>
-                            </Columns>
-                            <PagerStyle Font-Bold="true" Font-Size="Small" ForeColor="#3399FF" />
-                        </asp:GridView>
+                <asp:GridView ID="PurchaseGridView" runat="server" EmptyDataText="No Purchase Order" Width="100%" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="10" ForeColor="Black" GridLines="Horizontal" AllowPaging="False" CellSpacing="10" OnRowCommand="PurchaseGridView_RowCommand">
+                    <Columns>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lnDelete" CommandArgument='<%# Eval("Id") %>' CommandName="DeleteRow" ForeColor="#8C4510" runat="server" CausesValidation="false">Delete</asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="Id" HeaderText="Id" Visible="false" />
+                        <asp:BoundField DataField="ProductCode" HeaderText="Product(Code)" />
+                        <asp:BoundField DataField="ManufacturedDate" HeaderText="Manufactured Date" HtmlEncode="false" DataFormatString="{0:MM/dd/yyyy}" />
+                        <asp:BoundField DataField="ExpireDate" HeaderText="Expire Date" />
+                        <asp:BoundField DataField="Qty" HeaderText="Qty" />
+                        <asp:BoundField DataField="UnitPrice" HeaderText="Unit Price" />
+                        <asp:BoundField DataField="TotalPrice" HeaderText="Total Price" />
+                        <asp:BoundField DataField="NewMrp" HeaderText="New Mrp" />
+                        <asp:CommandField HeaderText="Action" SelectText="Edit" ShowSelectButton="True">
+                            <ItemStyle ForeColor="#CC0000" />
+                        </asp:CommandField>
+                    </Columns>
+                    <PagerStyle Font-Bold="true" Font-Size="Small" ForeColor="#3399FF" />
+                </asp:GridView>
+            </div>
         </div>
-                </div>
-            </ContentTemplate>
-        </asp:UpdatePanel>
+        <div class="form-group">
+            <div class="col-md-offset-9 col-md-2">
+                <asp:Button ID="SubmitButton" runat="server" Text="Submit" CssClass="btn btn-info" OnClick="SubmitButton_Click" />
+            </div>
+        </div>
     </div>
     <style type="text/css">
         .messagealert {
@@ -148,5 +149,5 @@
             });
         });
     </script>--%>
-    </div>
+         
 </asp:Content>

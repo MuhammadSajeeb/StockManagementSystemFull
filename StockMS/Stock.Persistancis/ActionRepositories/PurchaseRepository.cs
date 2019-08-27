@@ -17,16 +17,16 @@ namespace Stock.Persistancis.ActionRepositories
             string query = "Select Count(*)from Purchases";
             return _MainRepository.ExecuteScalar(query, _MainRepository.ConnectionString());
         }
-        public Purchase LastExistInvoice()
+        public Purchases LastExistInvoice()
         {
-            Purchase _Purchase = null;
+            Purchases _Purchase = null;
 
             string query = "Select top 1 Invoice from Purchases order by Invoice desc";
             var reader = _MainRepository.Reader(query, _MainRepository.ConnectionString());
             if (reader.HasRows)
             {
                 reader.Read();
-                _Purchase = new Purchase();
+                _Purchase = new Purchases();
                 _Purchase.Invoice = (reader["Invoice"].ToString());
             }
             reader.Close();
@@ -129,6 +129,11 @@ namespace Stock.Persistancis.ActionRepositories
             reader.Close();
 
             return _PurchaseDetailsList;
+        }
+        public int Submit(Purchases _Purchase)
+        {
+            string query = "Insert Into Purchases(SuplierId,Invoice,Date) Values ('" + _Purchase.SuplierId + "','" + _Purchase.Invoice + "','" + DateTime.Now.ToShortDateString() + "')";
+            return _MainRepository.ExecuteNonQuery(query, _MainRepository.ConnectionString());
         }
     }
 }

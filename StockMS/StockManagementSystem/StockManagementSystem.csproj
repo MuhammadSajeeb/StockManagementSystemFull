@@ -129,6 +129,7 @@
     <Content Include="Party\Suplier.aspx" />
     <Content Include="Product\Setup.aspx" />
     <Content Include="Purchase\Confirm.aspx" />
+    <Content Include="Sale\Confirm.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -210,6 +211,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Purchase\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sale\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sale\Confirm.aspx.designer.cs">
       <DependentUpon>Confirm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
